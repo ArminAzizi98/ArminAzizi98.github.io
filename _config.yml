@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "Seyedarmin Azizi"
-  avatar           : "/assets/images/avatar.png"
+  avatar           : "assets/images/avatar.png"
   bio              : "I am a 2nd year Ph.D. student at University of Southern California (USC)."
   location         : "Los Angeles, CA, USA"
   email            : "seyedarm@usc.edu"
