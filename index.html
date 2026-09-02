@@ -1,4 +1,688 @@
----
-layout: home
-author_profile: true
----
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seyedarmin Azizi</title>
+<meta name="description" content="Seyedarmin (Armin) Azizi is a Ph.D. student in Electrical and Computer Engineering at USC, working on efficient inference, post-training, and the behavior of large language models.">
+<link rel="canonical" href="https://arminazizi98.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Seyedarmin Azizi">
+<meta property="og:description" content="Ph.D. student at USC. Efficient inference, post-training, and the behavior of large language models.">
+<meta property="og:url" content="https://arminazizi98.github.io/">
+<meta property="og:image" content="https://arminazizi98.github.io/assets/images/profile.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Seyedarmin Azizi",
+  "alternateName": "Armin Azizi",
+  "url": "https://arminazizi98.github.io/",
+  "email": "seyedarm@usc.edu",
+  "jobTitle": "Ph.D. Student",
+  "affiliation": { "@type": "Organization", "name": "University of Southern California" },
+  "sameAs": [
+    "https://scholar.google.com/citations?user=kONzybkAAAAJ",
+    "https://github.com/ArminAzizi98",
+    "https://www.linkedin.com/in/armin-azizi-4560381ba"
+  ]
+}
+</script>
+
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --paper:#FBFBF8;
+  --paper-2:#F2F2ED;
+  --ink:#15171B;
+  --ink-2:#5A6069;
+  --rule:#E1E1D9;
+  --accent:#1E5F4F;
+  --accent-soft:#E6F0EB;
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+html[data-theme="dark"]{
+  --paper:#0E1013;
+  --paper-2:#171A1E;
+  --ink:#E7E8E3;
+  --ink-2:#98A0A8;
+  --rule:#272C32;
+  --accent:#5FBCA0;
+  --accent-soft:#13221E;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:400 1rem/1.62 var(--serif);
+  font-variant-numeric:oldstyle-num;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+p{margin:0 0 1em}
+ul,ol{margin:0;padding:0;list-style:none}
+
+::selection{background:var(--accent-soft);color:var(--ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:20;background:var(--paper);padding:10px 14px;border:1px solid var(--rule)}
+
+/* ---------- layout ---------- */
+.layout{
+  max-width:1080px;margin:0 auto;padding:0 28px;
+  display:grid;grid-template-columns:262px minmax(0,1fr);gap:76px;align-items:start;
+}
+.rail{position:sticky;top:0;padding:60px 0 40px;font-family:var(--sans)}
+.content{padding:60px 0 110px;max-width:680px}
+
+/* ---------- rail ---------- */
+.portrait{
+  width:112px;height:112px;border-radius:50%;object-fit:cover;
+  display:block;margin:0 0 20px;background:var(--paper-2);
+  border:1px solid var(--rule);
+}
+.name{font:600 1.6rem/1.15 var(--serif);letter-spacing:-.012em;margin:0 0 2px}
+.name-alt{font:400 .8rem/1.4 var(--sans);color:var(--ink-2);margin:0 0 16px}
+.role{font:400 .875rem/1.55 var(--sans);color:var(--ink-2);margin:0 0 22px}
+.role b{font-weight:500;color:var(--ink)}
+
+.links{font:400 .8125rem/1.9 var(--sans);margin:0 0 26px}
+.links a{color:var(--ink-2);border-bottom:1px solid transparent}
+.links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.nav{border-top:1px solid var(--rule);padding-top:14px;font:400 .8125rem/1 var(--sans)}
+.nav a{display:block;padding:7px 0 7px 12px;color:var(--ink-2);border-left:2px solid transparent}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="true"]{color:var(--accent);border-left-color:var(--accent);font-weight:500}
+
+.rail-foot{margin-top:22px;font:400 .75rem/1.5 var(--sans);color:var(--ink-2)}
+.toggle{
+  font:inherit;color:var(--ink-2);background:none;border:1px solid var(--rule);
+  border-radius:14px;padding:4px 11px;cursor:pointer;
+}
+.toggle:hover{color:var(--ink);border-color:var(--ink-2)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 54px;scroll-margin-top:26px}
+.sec-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+  border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 22px;
+}
+.sec-head h2{font:600 .8125rem/1 var(--sans);letter-spacing:.02em;margin:0;color:var(--ink)}
+.sec-head .aside{font:400 .75rem/1 var(--sans);color:var(--ink-2)}
+
+/* ---------- intro ---------- */
+.lede{font:400 1.28rem/1.5 var(--serif);letter-spacing:-.006em;margin:0 0 1.1em;max-width:30em}
+.lede em{font-style:italic;color:var(--accent)}
+#about p{max-width:36em;color:var(--ink)}
+#about a.inline,.prose a.inline{border-bottom:1px solid var(--rule);color:var(--ink)}
+#about a.inline:hover,.prose a.inline:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* ---------- news ---------- */
+.news{display:grid;gap:0}
+.news li{
+  display:grid;grid-template-columns:82px minmax(0,1fr);gap:18px;
+  padding:9px 0;border-bottom:1px dotted var(--rule);
+}
+.news li:last-child{border-bottom:0}
+.news time{font:400 .75rem/1.75 var(--sans);color:var(--ink-2);white-space:nowrap}
+.news p{margin:0;font-size:.95rem;line-height:1.6}
+.news a{border-bottom:1px solid var(--rule)}
+.news a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.news-more{margin-top:12px;font:400 .8125rem/1 var(--sans)}
+.news-more button{font:inherit;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;border-bottom:1px solid var(--accent)}
+
+/* ---------- filters ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 26px}
+.chip{
+  font:400 .75rem/1 var(--sans);color:var(--ink-2);
+  background:none;border:1px solid var(--rule);border-radius:13px;
+  padding:6px 12px;cursor:pointer;
+}
+.chip:hover{color:var(--ink);border-color:var(--ink-2)}
+.chip[aria-pressed="true"]{color:var(--accent);border-color:var(--accent);background:var(--accent-soft);font-weight:500}
+
+/* ---------- publications ---------- */
+.year-group{display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;margin:0 0 6px}
+.year{
+  font:500 .8125rem/1.7 var(--sans);color:var(--ink-2);
+  position:sticky;top:60px;align-self:start;padding-top:2px;
+}
+.pubs>li{padding:0 0 22px}
+.pub-title{font:600 1.05rem/1.4 var(--serif);letter-spacing:-.004em;margin:0 0 3px;display:block}
+a.pub-title:hover{color:var(--accent)}
+.authors{font:400 .8125rem/1.55 var(--sans);color:var(--ink-2);margin:0 0 3px}
+.authors .me{color:var(--ink);font-weight:600}
+.venue{font:400 .8125rem/1.55 var(--sans);color:var(--ink);margin:0 0 5px}
+.venue .mark{color:var(--accent);font-weight:500}
+.gist{font-size:.925rem;line-height:1.55;color:var(--ink-2);margin:0 0 7px;max-width:34em}
+.pub-links{font:400 .75rem/1 var(--sans);display:flex;flex-wrap:wrap;gap:14px}
+.pub-links a{color:var(--ink-2);border-bottom:1px solid var(--rule)}
+.pub-links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.hidden{display:none !important}
+
+/* ---------- timeline ---------- */
+.tl>li{
+  display:grid;grid-template-columns:118px minmax(0,1fr);gap:18px;
+  padding:0 0 20px;
+}
+.tl .when{font:400 .75rem/1.75 var(--sans);color:var(--ink-2)}
+.tl h3{font:600 1rem/1.4 var(--serif);margin:0 0 2px}
+.tl .where{font:400 .8125rem/1.5 var(--sans);color:var(--ink-2);margin:0 0 5px}
+.tl p{margin:0;font-size:.925rem;line-height:1.55;color:var(--ink-2);max-width:34em}
+
+/* ---------- plain lists ---------- */
+.plain>li{padding:7px 0;border-bottom:1px dotted var(--rule);font-size:.95rem}
+.plain>li:last-child{border-bottom:0}
+.plain .tag{font:400 .75rem/1 var(--sans);color:var(--ink-2);display:block;margin-top:3px}
+
+footer{
+  border-top:1px solid var(--rule);padding-top:16px;
+  font:400 .75rem/1.7 var(--sans);color:var(--ink-2);
+}
+footer a{border-bottom:1px solid var(--rule)}
+footer a:hover{color:var(--accent)}
+
+/* ---------- responsive ---------- */
+@media (max-width:880px){
+  .layout{grid-template-columns:1fr;gap:0;padding:0 22px}
+  .rail{position:static;padding:44px 0 28px;border-bottom:1px solid var(--rule)}
+  .content{padding:34px 0 80px}
+  .nav{display:none}
+  .portrait{width:92px;height:92px}
+  .year-group{grid-template-columns:1fr;gap:0}
+  .year{position:static;margin:0 0 10px;padding-top:4px;border-bottom:1px solid var(--rule);padding-bottom:6px}
+  .news li{grid-template-columns:1fr;gap:2px}
+  .tl>li{grid-template-columns:1fr;gap:3px}
+  .lede{font-size:1.16rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="layout">
+
+  <!-- ============ LEFT RAIL ============ -->
+  <aside class="rail">
+    <img class="portrait" src="assets/images/profile.png" alt="Seyedarmin Azizi">
+    <h1 class="name">Seyedarmin Azizi</h1>
+    <p class="name-alt">Armin</p>
+
+    <p class="role">
+      Ph.D. student, Electrical and Computer Engineering<br>
+      <b>University of Southern California</b><br>
+      SPORT Lab, advised by Massoud Pedram
+    </p>
+
+    <ul class="links">
+      <li><a href="mailto:seyedarm@usc.edu">seyedarm@usc.edu</a></li>
+      <li><a href="https://scholar.google.com/citations?user=kONzybkAAAAJ">Google Scholar</a></li>
+      <li><a href="https://github.com/ArminAzizi98">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/armin-azizi-4560381ba">LinkedIn</a></li>
+      <li><a href="assets/cv.pdf">Curriculum vitae (PDF)</a></li>
+    </ul>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#service">Service and teaching</a>
+    </nav>
+
+    <div class="rail-foot">
+      <button class="toggle" id="theme" type="button" aria-live="polite">Dark</button>
+    </div>
+  </aside>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="content" id="main">
+
+    <!-- ---- ABOUT ---- -->
+    <section id="about">
+      <p class="lede">
+        I build language models that <em>think less and still answer well</em>, and I study what
+        breaks inside them when they do.
+      </p>
+      <p>
+        I am a Ph.D. student in Electrical and Computer Engineering at the University of Southern
+        California. I work in the SPORT Lab with
+        <a class="inline" href="https://sportlab.usc.edu/~massoud/">Prof. Massoud Pedram</a>.
+        My research covers test-time sampling for reasoning, KV cache reduction, activation
+        steering, parameter-efficient fine-tuning, and the failure modes of instruction-tuned
+        models. I care about methods that hold up under an honest baseline and that run on
+        real hardware.
+      </p>
+      <p>
+        I am currently an Applied Research Intern on Apple's SIML team in Seattle. Before that I
+        worked on model compression and low-precision inference for vision transformers and edge
+        accelerators.
+      </p>
+      <p>
+        If you want to talk about efficient inference, post-training, or interpretability, send me
+        an email.
+      </p>
+    </section>
+
+    <!-- ---- NEWS ----
+         EDIT: add one line per item. Newest first. Items after the 6th are
+         collapsed automatically by the "Show all" button. -->
+    <section id="news">
+      <div class="sec-head"><h2>News</h2></div>
+      <ul class="news" id="news-list">
+        <li><time datetime="2026-06">Jun 2026</time>
+          <p>Started an Applied Research Internship on the SIML team at Apple in Seattle.</p></li>
+        <li><time datetime="2026-04">Apr 2026</time>
+          <p>Preprint: <a href="https://arxiv.org/abs/2604.13006">One Token Away from Collapse</a>,
+             on how a single added constraint can collapse instruction-tuned helpfulness.</p></li>
+        <li><time datetime="2026-02">Feb 2026</time>
+          <p>Preprint: <a href="https://arxiv.org/abs/2602.10273">Power-SMC</a>, sequence-level
+             power sampling for training-free reasoning gains.</p></li>
+        <li><time datetime="2025-12">Dec 2025</time>
+          <p>Preprint: <a href="https://arxiv.org/abs/2512.07993">SkipKV</a>, joint work with
+             UCSB and Intel on KV cache reduction for large reasoning models.</p></li>
+        <li><time datetime="2025-09">Sep 2025</time>
+          <p>Preprint: <a href="https://arxiv.org/abs/2509.02510">Top-H Decoding</a>, an
+             entropy-bounded sampler for open-ended generation.</p></li>
+        <li><time datetime="2025-07">Jul 2025</time>
+          <p><a href="https://arxiv.org/abs/2507.04742">Activation Steering for Chain-of-Thought
+             Compression</a> is out, with <a href="https://github.com/ArminAzizi98/ASC">code</a>.</p></li>
+        <li><time datetime="2025-01">Jan 2025</time>
+          <p><a href="https://openreview.net/forum?id=LgzRo1RpLS">MambaExtend</a> accepted at
+             ICLR 2025.</p></li>
+        <li><time datetime="2024-09">Sep 2024</time>
+          <p><a href="https://aclanthology.org/2024.findings-emnlp.563/">LaMDA</a> accepted at
+             Findings of EMNLP 2024.</p></li>
+      </ul>
+      <p class="news-more"><button type="button" id="news-toggle">Show all news</button></p>
+    </section>
+
+    <!-- ---- RESEARCH ---- -->
+    <section id="research">
+      <div class="sec-head"><h2>Research</h2></div>
+      <div class="prose">
+        <p>
+          Large models spend most of their cost at inference, and most of that cost buys tokens
+          nobody reads. Three questions organise my work.
+        </p>
+        <p>
+          <b>How much of test-time search can be moved into the model?</b> Sampling many chains and
+          reranking them is expensive. I study sequence-level samplers and distillation targets that
+          get similar quality from one pass.
+        </p>
+        <p>
+          <b>What does a model actually keep while reasoning?</b> Chain-of-thought traces and KV
+          caches are both far larger than the information they carry. I work on steering,
+          eviction, and compression methods that cut them without retraining.
+        </p>
+        <p>
+          <b>Why does alignment break under small edits?</b> A short added constraint can turn a
+          helpful model into a refusing one. I study these failures at the level of activations
+          and post-training dynamics, not only at the level of benchmarks.
+        </p>
+      </div>
+    </section>
+
+    <!-- ---- PUBLICATIONS ---- -->
+    <section id="publications">
+      <div class="sec-head">
+        <h2>Publications</h2>
+        <span class="aside"><a href="https://scholar.google.com/citations?user=kONzybkAAAAJ">Full list on Scholar</a></span>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter publications">
+        <button class="chip" data-filter="all" aria-pressed="true" type="button">All</button>
+        <button class="chip" data-filter="selected" aria-pressed="false" type="button">Selected</button>
+        <button class="chip" data-filter="reasoning" aria-pressed="false" type="button">Reasoning and decoding</button>
+        <button class="chip" data-filter="efficiency" aria-pressed="false" type="button">Efficient inference</button>
+        <button class="chip" data-filter="interp" aria-pressed="false" type="button">Interpretability</button>
+        <button class="chip" data-filter="hardware" aria-pressed="false" type="button">Vision and hardware</button>
+      </div>
+
+      <div id="pub-root">
+
+        <!-- ===== 2026 ===== -->
+        <div class="year-group">
+          <div class="year">2026</div>
+          <ol class="pubs">
+
+            <li class="pub" data-tags="reasoning efficiency selected">
+              <a class="pub-title" href="https://arxiv.org/abs/2602.10273">Power-SMC: Low-Latency Sequence-Level Power Sampling for Training-Free LLM Reasoning</a>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Erfan Baghaei Potraghloo, Minoo Ahmadi, Souvik Kundu, Massoud Pedram</p>
+              <p class="venue">Preprint, 2026</p>
+              <p class="gist">Samples from a sharpened sequence-level distribution with sequential Monte Carlo, so reasoning accuracy improves without any training or reranking pass.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2602.10273">arXiv</a>
+                <a href="https://github.com/ArminAzizi98/Power-SMC">Code</a>
+              </p>
+            </li>
+
+            <li class="pub" data-tags="interp reasoning selected">
+              <a class="pub-title" href="https://arxiv.org/abs/2604.13006">One Token Away from Collapse: The Fragility of Instruction-Tuned Helpfulness</a>
+              <p class="authors">Erfan Baghaei Potraghloo, <span class="me">Seyedarmin Azizi</span>, Souvik Kundu, Massoud Pedram</p>
+              <p class="venue">Preprint, 2026</p>
+              <p class="gist">Shows that adding one short constraint to a benign instruction can collapse an aligned model into a degenerate or refusing response, and traces where the collapse starts.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2604.13006">arXiv</a>
+              </p>
+            </li>
+
+            <!-- EDIT: confirm the venue line below before you push. -->
+            <li class="pub" data-tags="reasoning interp efficiency selected">
+              <a class="pub-title" href="https://arxiv.org/abs/2507.04742">Activation Steering for Chain-of-Thought Compression</a>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Erfan Baghaei Potraghloo, Massoud Pedram</p>
+              <p class="venue"><span class="mark">Findings of ACL 2026</span></p>
+              <p class="gist">Shortens reasoning traces by editing hidden states at inference time. Uses 100 paired examples, cuts chain-of-thought length by up to 67% on MATH500 and GSM8K, and keeps accuracy.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2507.04742">arXiv</a>
+                <a href="https://github.com/ArminAzizi98/ASC">Code</a>
+              </p>
+            </li>
+
+          </ol>
+        </div>
+
+        <!-- ===== 2025 ===== -->
+        <div class="year-group">
+          <div class="year">2025</div>
+          <ol class="pubs">
+
+            <li class="pub" data-tags="efficiency selected">
+              <a class="pub-title" href="https://arxiv.org/abs/2512.07993">SkipKV: Selective Skipping of KV Generation and Storage for Efficient Inference with Large Reasoning Models</a>
+              <p class="authors">Jiayi Tian, <span class="me">Seyedarmin Azizi</span>, Yequan Zhao, Erfan Baghaei Potraghloo, Sean McPherson, Sharath Nittur Sridhar, Zhengyang Wang, Zheng Zhang, Massoud Pedram, Souvik Kundu</p>
+              <p class="venue">Preprint, 2025</p>
+              <p class="gist">Skips key-value generation for tokens that later steps never attend to, which cuts both cache memory and decode latency in long chain-of-thought runs.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2512.07993">arXiv</a>
+              </p>
+            </li>
+
+            <li class="pub" data-tags="reasoning">
+              <a class="pub-title" href="https://arxiv.org/abs/2509.02510">Top-H Decoding: Adapting the Creativity and Coherence with Bounded Entropy in Text Generation</a>
+              <p class="authors">Erfan Baghaei Potraghloo, <span class="me">Seyedarmin Azizi</span>, Souvik Kundu, Massoud Pedram</p>
+              <p class="venue">Preprint, 2025</p>
+              <p class="gist">Replaces a fixed probability cutoff with an entropy budget, so the sampler stays diverse where the model is confident and stays coherent where it is not.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2509.02510">arXiv</a>
+                <a href="https://github.com/ErfanBaghaei/Top-H-Decoding">Code</a>
+              </p>
+            </li>
+
+            <li class="pub" data-tags="efficiency selected">
+              <a class="pub-title" href="https://openreview.net/forum?id=LgzRo1RpLS">MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba</a>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Souvik Kundu, Mohammad Erfan Sadeghi, Massoud Pedram</p>
+              <p class="venue"><span class="mark">ICLR 2025</span></p>
+              <p class="gist">Calibrates the scaling factors inside the Mamba discretization step. This extends usable context length by orders of magnitude with no gradient updates.</p>
+              <p class="pub-links">
+                <a href="https://openreview.net/forum?id=LgzRo1RpLS">OpenReview</a>
+                <a href="https://github.com/ArminAzizi98/LongContextMamba">Code</a>
+              </p>
+            </li>
+
+            <li class="pub" data-tags="efficiency">
+              <span class="pub-title">QMambaExtend: Improving Long-Context Extension of Memory-Efficient Mamba Models</span>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Souvik Kundu, Mohammad Erfan Sadeghi, Massoud Pedram</p>
+              <p class="venue">Workshop on Scalable Optimization for Efficient and Adaptive Foundation Models, 2025</p>
+              <p class="gist">Extends the calibration idea to quantized Mamba models, where activation scaling and weight precision interact.</p>
+            </li>
+
+            <li class="pub" data-tags="hardware">
+              <a class="pub-title" href="https://arxiv.org/abs/2505.18570">VISTA: Vision-Language Inference for Training-Free Stock Time-Series Analysis</a>
+              <p class="authors">Tina Khezresmaeilzadeh, Parsa Razmara, <span class="me">Seyedarmin Azizi</span>, Mohammad Erfan Sadeghi, Erfan Baghaei Potraghloo</p>
+              <p class="venue">Preprint, 2025</p>
+              <p class="gist">Prompts a vision-language model with both the numeric series and its chart, and shows that the two views disagree in useful ways.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2505.18570">arXiv</a>
+              </p>
+            </li>
+
+          </ol>
+        </div>
+
+        <!-- ===== 2024 ===== -->
+        <div class="year-group">
+          <div class="year">2024</div>
+          <ol class="pubs">
+
+            <li class="pub" data-tags="efficiency selected">
+              <a class="pub-title" href="https://aclanthology.org/2024.findings-emnlp.563/">LaMDA: Large Model Fine-Tuning via Spectrally Decomposed Low-Dimensional Adaptation</a>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Souvik Kundu, Massoud Pedram</p>
+              <p class="venue"><span class="mark">Findings of EMNLP 2024</span></p>
+              <p class="gist">Freezes the projection matrices of the LoRA path and adapts only a low-dimensional core, which needs up to 17.7 times fewer parameter updates than LoRA at equal quality.</p>
+              <p class="pub-links">
+                <a href="https://aclanthology.org/2024.findings-emnlp.563/">ACL Anthology</a>
+                <a href="https://arxiv.org/abs/2406.12832">arXiv</a>
+                <a href="https://github.com/ArminAzizi98/LaMDA">Code</a>
+              </p>
+            </li>
+
+            <li class="pub" data-tags="hardware">
+              <a class="pub-title" href="https://arxiv.org/abs/2402.06004">Memory-Efficient Vision Transformers: An Activation-Aware Mixed-Rank Compression Strategy</a>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Mahdi Nazemi, Massoud Pedram</p>
+              <p class="venue"><span class="mark">ECCV 2024 Workshops</span></p>
+              <p class="gist">Chooses per-layer ranks from activation statistics rather than weight norms, and removes 60% of DeiT-B parameters for under 1% ImageNet accuracy loss.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2402.06004">arXiv</a>
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-91979-4_6">Springer</a>
+              </p>
+            </li>
+
+            <li class="pub" data-tags="hardware">
+              <a class="pub-title" href="https://arxiv.org/abs/2406.14854">PEANO-ViT: Power-Efficient Approximations of Non-Linearities in Vision Transformers</a>
+              <p class="authors">Mohammad Erfan Sadeghi, Arash Fayyazi, <span class="me">Seyedarmin Azizi</span>, Massoud Pedram</p>
+              <p class="venue"><span class="mark">ISLPED 2024</span></p>
+              <p class="gist">Replaces softmax, layer normalization, and GELU with FPGA-friendly approximations that hold accuracy while cutting power.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2406.14854">arXiv</a>
+                <a href="https://dl.acm.org/doi/10.1145/3665314.3670843">ACM DL</a>
+              </p>
+            </li>
+
+            <li class="pub" data-tags="hardware">
+              <a class="pub-title" href="https://arxiv.org/abs/2308.06422">Automated Optimization of Deep Neural Networks: Dynamic Bit-Width and Layer-Width Selection via Cluster-Based Parzen Estimation</a>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Mahdi Nazemi, Arash Fayyazi, Massoud Pedram</p>
+              <p class="venue"><span class="mark">DATE 2024</span></p>
+              <p class="gist">Uses Hessian sensitivity to shrink the search space, then searches bit-width and layer-width jointly with a tree-structured Parzen estimator.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2308.06422">arXiv</a>
+              </p>
+            </li>
+
+            <li class="pub" data-tags="hardware">
+              <a class="pub-title" href="https://arxiv.org/abs/2312.02210">Low-Precision Mixed-Computation Models for Inference on Edge</a>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Mahdi Nazemi, Mehdi Kamal, Massoud Pedram</p>
+              <p class="venue"><span class="mark">IEEE Transactions on VLSI Systems</span>, 32(8)</p>
+              <p class="gist">Mixes posit and fixed-point arithmetic inside one network, and assigns the expensive format only to the layers that need it.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2312.02210">arXiv</a>
+              </p>
+            </li>
+
+            <!-- EDIT: add the arXiv link for this one. -->
+            <li class="pub" data-tags="hardware">
+              <span class="pub-title">Efficient Noise Mitigation for Enhancing Inference Accuracy in DNNs on Mixed-Signal Accelerators</span>
+              <p class="authors"><span class="me">Seyedarmin Azizi</span>, Mohammad Erfan Sadeghi, Mehdi Kamal, Massoud Pedram</p>
+              <p class="venue">Preprint, 2024</p>
+              <p class="gist">Models process variation and aging as activation noise, then inserts a denoising block so analog accelerators keep their accuracy as they age.</p>
+            </li>
+
+          </ol>
+        </div>
+
+        <!-- ===== 2023 ===== -->
+        <div class="year-group">
+          <div class="year">2023</div>
+          <ol class="pubs">
+            <li class="pub" data-tags="hardware">
+              <a class="pub-title" href="https://arxiv.org/abs/2305.04526">SNT: Sharpness-Minimizing Network Transformation for Fast Compression-friendly Pretraining</a>
+              <p class="authors">Jung Hwan Heo, <span class="me">Seyedarmin Azizi</span>, Arash Fayyazi, Mahdi Nazemi, Massoud Pedram</p>
+              <p class="venue">Preprint, 2023</p>
+              <p class="gist">Reshapes the loss landscape during pretraining so that the resulting network survives quantization and pruning with less recovery training.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2305.04526">arXiv</a>
+              </p>
+            </li>
+          </ol>
+        </div>
+
+      </div>
+      <p class="gist" id="pub-empty" hidden>No papers in this category yet.</p>
+    </section>
+
+    <!-- ---- EXPERIENCE ---- -->
+    <section id="experience">
+      <div class="sec-head"><h2>Experience and education</h2></div>
+      <ul class="tl">
+
+        <li>
+          <div class="when">Jun 2026 &ndash; present</div>
+          <div>
+            <h3>Applied Research Intern</h3>
+            <p class="where">Apple, SIML, Seattle, WA</p>
+            <p>Post-training and distillation for on-device language models.</p>
+          </div>
+        </li>
+
+        <!-- EDIT: add earlier internships here, same shape. -->
+
+        <li>
+          <div class="when">2023 &ndash; present</div>
+          <div>
+            <h3>Ph.D., Electrical and Computer Engineering</h3>
+            <p class="where">University of Southern California, SPORT Lab</p>
+            <p>Advised by Prof. Massoud Pedram. Efficient inference, post-training, and model behavior.</p>
+          </div>
+        </li>
+
+        <!-- EDIT: add your B.Sc. below. Example shape:
+        <li>
+          <div class="when">2017 &ndash; 2022</div>
+          <div>
+            <h3>B.Sc., Electrical Engineering</h3>
+            <p class="where">Your university</p>
+          </div>
+        </li>
+        -->
+
+      </ul>
+    </section>
+
+    <!-- ---- SERVICE ----
+         EDIT: replace with the venues you actually reviewed for, and the courses you TA'd. -->
+    <section id="service">
+      <div class="sec-head"><h2>Service and teaching</h2></div>
+      <ul class="plain">
+        <li>Reviewer, NeurIPS, ICLR, ICML, ACL, EMNLP
+          <span class="tag">EDIT this line to match your record</span></li>
+        <li>Teaching assistant, USC
+          <span class="tag">EDIT with course number and semester</span></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Last updated September 2026. Built as a single HTML file, no build step.
+      Source on <a href="https://github.com/ArminAzizi98/ArminAzizi98.github.io">GitHub</a>.</p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- theme ---- */
+  var root = document.documentElement;
+  var btn  = document.getElementById("theme");
+  var saved = null;
+  try { saved = localStorage.getItem("theme"); } catch(e){}
+  var start = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  apply(start);
+  btn.addEventListener("click", function(){
+    apply(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
+  function apply(mode){
+    root.setAttribute("data-theme", mode);
+    btn.textContent = mode === "dark" ? "Light" : "Dark";
+    try { localStorage.setItem("theme", mode); } catch(e){}
+  }
+
+  /* ---- news collapse ---- */
+  var VISIBLE = 6;
+  var items = [].slice.call(document.querySelectorAll("#news-list > li"));
+  var newsBtn = document.getElementById("news-toggle");
+  var open = false;
+  if (items.length > VISIBLE) { collapse(); } else { newsBtn.parentNode.hidden = true; }
+  newsBtn.addEventListener("click", function(){ open ? collapse() : expand(); });
+  function collapse(){
+    items.forEach(function(li,i){ li.classList.toggle("hidden", i >= VISIBLE); });
+    newsBtn.textContent = "Show all news"; open = false;
+  }
+  function expand(){
+    items.forEach(function(li){ li.classList.remove("hidden"); });
+    newsBtn.textContent = "Show recent only"; open = true;
+  }
+
+  /* ---- publication filters ---- */
+  var chips  = [].slice.call(document.querySelectorAll(".chip"));
+  var pubs   = [].slice.call(document.querySelectorAll(".pub"));
+  var groups = [].slice.call(document.querySelectorAll(".year-group"));
+  var empty  = document.getElementById("pub-empty");
+
+  chips.forEach(function(chip){
+    chip.addEventListener("click", function(){
+      chips.forEach(function(c){ c.setAttribute("aria-pressed", String(c === chip)); });
+      filter(chip.dataset.filter);
+    });
+  });
+
+  function filter(key){
+    var shown = 0;
+    pubs.forEach(function(li){
+      var hit = key === "all" || (" " + li.dataset.tags + " ").indexOf(" " + key + " ") > -1;
+      li.classList.toggle("hidden", !hit);
+      if (hit) shown++;
+    });
+    groups.forEach(function(g){
+      var any = g.querySelector(".pub:not(.hidden)");
+      g.classList.toggle("hidden", !any);
+    });
+    empty.hidden = shown > 0;
+  }
+
+  /* ---- nav highlight ---- */
+  var links = {};
+  [].slice.call(document.querySelectorAll(".nav a")).forEach(function(a){
+    links[a.getAttribute("href").slice(1)] = a;
+  });
+  var seen = new Set();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      e.isIntersecting ? seen.add(e.target.id) : seen.delete(e.target.id);
+    });
+    var order = Object.keys(links);
+    var active = order.find(function(id){ return seen.has(id); });
+    order.forEach(function(id){
+      links[id].setAttribute("aria-current", String(id === active));
+    });
+  }, { rootMargin: "-15% 0px -70% 0px" });
+  [].slice.call(document.querySelectorAll("main section")).forEach(function(s){ obs.observe(s); });
+})();
+</script>
+</body>
+</html>
